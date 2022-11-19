@@ -5,6 +5,7 @@ import { validate as uuidValidate } from "uuid";
 describe("UniqueEntityId Unit Tests", () => {
   const validateSpy = jest.spyOn(UniqueEntityId.prototype as any, "validate");
 
+
   it("should throw error when uuid is invalid", () => {
     expect(() => new UniqueEntityId("fake id")).toThrow(new InvalidUuidError());
     expect(validateSpy).toHaveBeenCalled();
@@ -23,3 +24,4 @@ describe("UniqueEntityId Unit Tests", () => {
     expect(validateSpy).toHaveBeenCalled();
   });
 });
+
